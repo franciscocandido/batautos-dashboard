@@ -5,9 +5,7 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Image,
   Input,
-  useColorMode,
 } from '@chakra-ui/react';
 import { Field, Formik } from 'formik';
 import Head from 'next/head';
