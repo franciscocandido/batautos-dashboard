@@ -13,14 +13,14 @@ import { Field, Formik } from 'formik';
 import Head from 'next/head';
 import * as yup from 'yup';
 
+import FormHeaderImage from '../components/FormHeaderImage';
+
 interface setPasswordFormProps {
   password: string;
   passwordConfirmation: string;
 }
 
 export default function Password() {
-  const { colorMode } = useColorMode();
-
   const setPasswordFormSchema = yup.object().shape({
     password: yup
       .string()
@@ -45,19 +45,7 @@ export default function Password() {
       </Head>
 
       <Container maxW='380px'>
-        <Image
-          src={
-            colorMode == 'dark'
-              ? 'batautos-logo-dark.webp'
-              : 'batautos-logo-light.webp'
-          }
-          alt='Logotipo da Batautos Auto Service'
-          w='auto'
-          h='auto'
-          paddingBottom='25px'
-          paddingTop='10rem'
-          draggable='false'
-        />
+        <FormHeaderImage />
 
         <Formik
           initialValues={{ password: '', passwordConfirmation: '' }}
