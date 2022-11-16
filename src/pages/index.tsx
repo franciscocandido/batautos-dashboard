@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   FormControl,
@@ -11,6 +10,7 @@ import { Field, Formik } from 'formik';
 import Head from 'next/head';
 import * as yup from 'yup';
 
+import FormErrorMessagePlaceholder from '../components/FormErrorMessagePlaceholder';
 import FormHeaderImage from '../components/FormHeaderImage';
 
 interface loginFormProps {
@@ -62,7 +62,7 @@ export default function Home() {
                   borderColor='gray.600'
                 />
                 {!errors.email ? (
-                  <Box w='full' h='19px' marginTop='8px' />
+                  <FormErrorMessagePlaceholder />
                 ) : (
                   <FormErrorMessage>{errors.email}</FormErrorMessage>
                 )}
@@ -79,7 +79,7 @@ export default function Home() {
                   borderColor='gray.600'
                 />
                 {!errors.password ? (
-                  <Box w='full' h='19px' marginTop='8px' />
+                  <FormErrorMessagePlaceholder />
                 ) : (
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
                 )}

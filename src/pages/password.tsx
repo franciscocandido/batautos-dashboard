@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   FormControl,
@@ -11,6 +10,7 @@ import { Field, Formik } from 'formik';
 import Head from 'next/head';
 import * as yup from 'yup';
 
+import FormErrorMessagePlaceholder from '../components/FormErrorMessagePlaceholder';
 import FormHeaderImage from '../components/FormHeaderImage';
 
 interface setPasswordFormProps {
@@ -64,7 +64,7 @@ export default function Password() {
                   borderColor='gray.600'
                 />
                 {!errors.password ? (
-                  <Box w='full' h='19px' marginTop='8px' />
+                  <FormErrorMessagePlaceholder />
                 ) : (
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
                 )}
@@ -83,7 +83,7 @@ export default function Password() {
                   borderColor='gray.600'
                 />
                 {!errors.passwordConfirmation ? (
-                  <Box w='full' h='19px' marginTop='8px' />
+                  <FormErrorMessagePlaceholder />
                 ) : (
                   <FormErrorMessage>
                     {errors.passwordConfirmation}
